@@ -142,4 +142,4 @@ The response language matches the input language automatically.
 - Ensure Google Gemini API credentials are properly configured
 - The service requires access to the user medication database
 - Response times typically range from 0.5-2 seconds
-- Error responses include descriptive messages for debugging 
+- Error responses include descriptive messages for debugging

@@ -631,6 +631,74 @@ const takeMedicine = (req, res) => {
   );
 };
 
+const syncTodayIntake = (req, res) => {
+  const { user_id } = req.body;
+  const intakesData = req.body.intakes; // This should be a string in format "[[time, box nos], [time, box nos]]"
+  
+  if (!user_id || !intakesData) {
+    return res.status(400).json({ message: "User ID and intakes data are required" });
+  }
+  
+  try {
+    // Parse the intakes data from string to actual 2D array
+    const intakes = JSON.parse(intakesData);
+    
+    if (!Array.isArray(intakes) || intakes.some(item => !Array.isArray(item) || item.length !== 2)) {
+      return res.status(400).json({ message: "Invalid intakes format. Expected format: [[time, box nos], [time, box nos]]" });
+    }
+    
+    // Get today's date in YYYY-MM-DD format
+    const today = moment().format('YYYY-MM-DD');
+    
+    // Process each intake record
+    const processIntakes = async () => {
+      let successCount = 0;
+      let errorCount = 0;
+      
+      for (const [time, boxNos] of intakes) {
+        // Format the time to match database format
+        const scheduledTime = `${today} ${time}`;
+        
+        // Update the corresponding medicine intakes
+        connection.query(
+          `UPDATE MedicineIntakes mi
+           JOIN MedicineCourses mc ON mi.medicine_course_id = mc.medicine_course_id
+           JOIN Courses c ON mc.course_id = c.course_id
+           SET mi.taken_at = NOW(), mi.box_number = ?
+           WHERE c.user_id = ? 
+           AND DATE(mi.scheduled_at) = ? 
+           AND TIME(mi.scheduled_at) = ?
+           AND mi.taken_at IS NULL`,
+          [boxNos, user_id, today, time],
+          (err, results) => {
+            if (err) {
+              errorCount++;
+              console.error(`Error updating intake for time ${time}:`, err);
+            } else if (results.affectedRows > 0) {
+              successCount++;
+            }
+            
+            // Check if all intakes have been processed
+            if (successCount + errorCount === intakes.length) {
+              return res.status(200).json({
+                message: `Processed ${intakes.length} intake records with ${successCount} successful updates and ${errorCount} errors`,
+                success: successCount,
+                errors: errorCount
+              });
+            }
+          }
+        );
+      }
+    };
+    
+    processIntakes();
+    
+  } catch (error) {
+    console.error("Error processing intakes data:", error);
+    return res.status(500).json({ message: "Error processing intakes data" });
+  }
+};
+
 module.exports = {
   newCourse,
   addMedicineCourse,
@@ -639,5 +707,6 @@ module.exports = {
   deleteCourse,
   getLifetimeMatrix,
   getMedicationCourses,
-  takeMedicine
+  takeMedicine,
+  syncTodayIntake
 };
