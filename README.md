@@ -130,7 +130,3 @@ HealthMobi is planning to transition to an open source model to foster innovatio
 - **EHR Systems**: Integration with electronic health record systems
 - **Pharmacy Networks**: Direct connection with medical systems
 - **Telehealth Platforms**: API for video consultation integration
-
-## 👨‍💻 Development Team
-
-HealthMobi was proudly developed by the **Gameis Alice Team** from **Pune Institute of Computer Technology (PICT)** under the **Hacksprint Hackathon by MMCOE** as an innovative solution to healthcare management challenges. The team combined expertise in mobile development, backend systems, database management, and UX design to create this comprehensive healthcare platform.
