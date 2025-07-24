@@ -130,3 +130,7 @@ HealthMobi is planning to transition to an open source model to foster innovatio
 - **EHR Systems**: Integration with electronic health record systems
 - **Pharmacy Networks**: Direct connection with medical systems
 - **Telehealth Platforms**: API for video consultation integration
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
