@@ -135,14 +135,13 @@ HealthMobi is planning to transition to an open source model to foster innovatio
 
 This project is licensed under the [MIT License](LICENSE).
 
+## 🤝 Contributing 
+
+We welcome contributions from everyone! Please read our [Contributing Guidelines](contributing.md) to get started.
+
 
 <p align="center">
   <a href="#top" style="font-size: 18px; padding: 8px 16px; display: inline-block; border: 1px solid #ccc; border-radius: 6px; text-decoration: none;">
     ⬆️ Back to Top
   </a>
 </p>
-
-
-## 🤝 Contributing 
-
-We welcome contributions from everyone! Please read our [Contributing Guidelines](contributing.md) to get started.
