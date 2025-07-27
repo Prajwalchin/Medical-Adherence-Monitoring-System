@@ -141,3 +141,8 @@ This project is licensed under the [MIT License](LICENSE).
     ⬆️ Back to Top
   </a>
 </p>
+
+
+## 🤝 Contributing 
+
+We welcome contributions from everyone! Please read our [Contributing Guidelines](contributing.md) to get started.
