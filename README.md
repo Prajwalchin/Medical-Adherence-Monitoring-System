@@ -27,6 +27,13 @@ HealthMobi is a comprehensive healthcare platform that bridges the gap between d
 - **📊 Progress Visualization**: Interactive charts showing adherence trends and health improvements
 - **🔄 Sync Across Devices**: Seamless experience across mobile and web platforms
 
+
+
+ [![Watch the Demo](Frontend/assets/images/video-thumbnail.png)](https://drive.google.com/file/d/1xmnK6s_Wbw5SY_ZkHk-FGimg-aUSNLFQ/view?usp=drive_link)
+
+    
+
+
 ## 🛠️ Technical Architecture
 
 ### Backend Components
