@@ -138,7 +138,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-# 🛠️ Deep Technical Documentation
+# 🛠️ Detailed Technical Documentation
 
 ## System Architecture Overview
 
