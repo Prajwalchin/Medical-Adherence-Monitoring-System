@@ -135,6 +135,7 @@ HealthMobi is planning to transition to an open source model to foster innovatio
 
 This project is licensed under the [MIT License](LICENSE).
 
+
 ---
 
 # 🛠️ Deep Technical Documentation
@@ -338,6 +339,13 @@ See the README.md in each major subdirectory for deep dives into:
 - [Frontend](./Frontend/doc.md)
 
 ---
+
+## 🤝 Contributing 
+
+We welcome contributions from everyone! Please read our [Contributing Guidelines](contributing.md) to get started.
+
+## 📌 FAQ
+See the [FAQ.md](./FAQ.md) for setup help and troubleshooting.
 
 <p align="center">
   <a href="#top" style="font-size: 18px; padding: 8px 16px; display: inline-block; border: 1px solid #ccc; border-radius: 6px; text-decoration: none;">
