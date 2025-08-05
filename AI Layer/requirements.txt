@@ -1,0 +1,15 @@
+# Core AI/LLM
+google-generativeai==0.3.2    # Gemini API (used in both services)
+langchain==0.1.13            # LLM orchestration (AI Assistant)
+langchain-google-genai==0.0.11 # Gemini-LangChain integration
+
+# Backend/APIs
+fastapi==0.109.1             # REST API (AI Assistant)
+uvicorn==0.27.0              # ASGI server
+python-socketio==5.11.2      # Socket.IO (Prescription Extraction)
+eventlet==0.35.1             # Async WSGI (Socket.IO support)
+
+# Utilities
+python-dotenv==1.0.0         # .env files (both services)
+requests==2.31.0             # HTTP (Cloudinary image downloads)
+pydantic==2.6.1             # Data validation (FastAPI models)
