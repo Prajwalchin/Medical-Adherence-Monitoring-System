@@ -1,6 +1,9 @@
 # 🩺 HealthMobi
 
-An innovative healthcare management system designed to help patients track medication intake, connect with doctors, and maintain a healthier lifestyle.
+A patient-centric medication adherence ecosystem that empowers patients by:
+- Providing smart reminders for medication intake.
+- Enabling seamless tracking of their progress.
+- Delivering personalized motivation and support to ensure consistent medication adherence.
 
 > **💻 Developed by Gameis Alice Team from PICT College**
 - PRAJWAL CHINCHMALATPURE
