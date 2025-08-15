@@ -11,10 +11,6 @@ A patient-centric medication adherence ecosystem that empowers patients by:
 - PARAS THAKUR
 - NEHA DIWAN
 
-## 🌟 Overview
-
-HealthMobi is a comprehensive healthcare platform that bridges the gap between doctors and patients. The application helps users manage their medication courses, receive timely reminders, track medication adherence, and maintain communication with healthcare providers.
-
 ## ✨ Key Features
 
 - **🔐 Authentication System**: Secure phone-based OTP authentication
