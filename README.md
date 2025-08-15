@@ -145,55 +145,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## System Architecture Overview
 
-```mermaid
-graph TD
-    subgraph "Frontend (Flutter App)"
-        F1["User Interface"]
-        F2["Local Storage"]
-        F3["Push Notifications"]
-        F4["API Integration"]
-    end
-    subgraph "Backend (Node.js/Express)"
-        B1["REST API Controllers"]
-        B2["WebSocket Server"]
-        B3["Cron Jobs"]
-        B4["Twilio SMS Service"]
-        B5["Database ORM"]
-    end
-    subgraph "AI Layer"
-        AI1["AI Assistant Service"]
-        AI2["Prescription Extraction Service"]
-        AI3["Chroma Vector DB"]
-    end
-    subgraph "Embedded C"
-        EC1["Smart Pillbox Firmware"]
-    end
-    subgraph "Database"
-        DB1["MySQL"]
-        DB2["Chroma DB (AI)"]
-    end
-
-    F1 -- "API Calls" --> B1
-    F1 -- "WebSocket" --> B2
-    F1 -- "Push/Local Notifications" --> F3
-    F1 -- "AI Chat/Prescription Upload" --> AI1
-    F1 -- "Bluetooth/IoT" --> EC1
-    F4 -- "REST API" --> B1
-    B1 -- "DB Queries" --> DB1
-    B1 -- "AI Requests" --> AI1
-    B1 -- "WebSocket Events" --> B2
-    B1 -- "Twilio SMS" --> B4
-    B3 -- "Scheduled Reminders" --> B2
-    B3 -- "DB Access" --> DB1
-    B2 -- "Real-time Events" --> F1
-    AI1 -- "Prescription Extraction" --> AI2
-    AI1 -- "Vector Search" --> AI3
-    AI2 -- "DB Access" --> DB2
-    AI3 -- "Vector Storage" --> DB2
-    EC1 -- "Intake Events" --> B1
-    EC1 -- "Bluetooth Sync" --> F1
-```
-
 ### Component Responsibilities
 
 - **Frontend (Flutter):**
@@ -281,21 +232,6 @@ sequenceDiagram
     Prescription_Extractor->>ChromaDB: Store/extract vectors
     AI_Assistant-->>Frontend: Reply/structured data
     Frontend-->>User: Show AI response
-```
-
-### 4. Smart Pillbox Integration
-
-```mermaid
-sequenceDiagram
-    participant Pillbox
-    participant Frontend
-    participant Backend
-    participant DB
-    Pillbox->>Frontend: Intake event via Bluetooth
-    Frontend->>Backend: Report intake
-    Backend->>DB: Log intake
-    Backend-->>Frontend: Update adherence
-    Frontend-->>User: Show updated status
 ```
 
 ---
